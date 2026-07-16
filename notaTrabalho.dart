@@ -5,6 +5,10 @@ class NotaTrabalho extends Nota {
   String _tipo = 'Trabalho';
   NotaTrabalho(super._valor, super._descricao);
 
+  factory NotaTrabalho.fromMap(Map<String, dynamic> map) {
+    return NotaTrabalho(map['valor'], map['descricao']);
+  }
+
   @override
   double getPeso() {
     return _peso;
@@ -15,13 +19,12 @@ class NotaTrabalho extends Nota {
     return _tipo;
   }
 
-  Map<String, dynamic> toMap () {
+  Map<String, dynamic> toMap() {
     return {
       'valor': getValor(),
       'descricao': getDescricao(),
       'tipo': _tipo,
-      'peso': _peso
+      'peso': _peso,
     };
   }
-
 }
