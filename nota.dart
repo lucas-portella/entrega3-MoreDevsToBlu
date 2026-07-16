@@ -14,11 +14,6 @@ abstract class Nota {
 
   double getPeso();
   String getTipo();
+  Map <String, dynamic> toMap();
 
-  // Map<String, dynamic> toMap() {
-  //   return {
-  //     'valor' : _valor,
-
-  //   }
-  // }
 }

@@ -121,4 +121,8 @@ class Turma {
       print('Nome inválido. O nome não pode estar vazio');
     }
   }
+
+  Map<String, dynamic> toMap() {
+    return {'alunos': _alunos.map((aluno) => aluno.toMap()).toList()};
+  }
 }

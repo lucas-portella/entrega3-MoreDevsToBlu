@@ -22,17 +22,19 @@ void main() {
       case '5':
         turma.lancarNotaAluno();
       case '6':
+        print(turma.toMap());
+      case '7':
         print('Saindo..');
 
       default:
         print('Opção inválida.');
     }
-  } while (op != '6');
+  } while (op != '7');
 }
 
 void imprimeMenu() {
   print('Digite uma opção:');
   print(
-    '1- Cadastrar aluno 2- Listar Alunos 3- Listar Notas Alunos 4- Listar Media Alunos 5- Cadastrar Nota Aluno 6- Sair',
+    '1- Cadastrar aluno 2- Listar Alunos 3- Listar Notas Alunos 4- Listar Media Alunos 5- Cadastrar Nota Aluno 6- Imprimir usando Map 7- Sair',
   );
 }

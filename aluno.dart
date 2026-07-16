@@ -66,4 +66,8 @@ class Aluno {
     print('Nota trabalhos: ${somaTrabalhos()}');
     print('Média: ${media()}\n');
   }
+
+  Map<String, dynamic> toMap () {
+    return {'nome': _nome, 'notas': _notas.map((nota) => nota.toMap()).toList()};
+  }
 }

@@ -1,17 +1,27 @@
 import 'nota.dart';
 
 class NotaTrabalho extends Nota {
-  double peso = 1;
-  String tipo = 'Trabalho';
+  double _peso = 1;
+  String _tipo = 'Trabalho';
   NotaTrabalho(super._valor, super._descricao);
 
   @override
   double getPeso() {
-    return peso;
+    return _peso;
   }
 
   @override
   String getTipo() {
-    return tipo;
+    return _tipo;
   }
+
+  Map<String, dynamic> toMap () {
+    return {
+      'valor': getValor(),
+      'descricao': getDescricao(),
+      'tipo': _tipo,
+      'peso': _peso
+    };
+  }
+
 }
