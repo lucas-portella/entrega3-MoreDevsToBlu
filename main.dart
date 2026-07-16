@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:convert';
 import 'turma.dart';
 
 void main() {
@@ -22,7 +23,7 @@ void main() {
       case '5':
         turma.lancarNotaAluno();
       case '6':
-        print(turma.toMap());
+        print(jsonEncode(turma.toMap()));
       case '7':
         print('Saindo..');
 
