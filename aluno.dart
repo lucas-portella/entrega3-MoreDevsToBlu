@@ -8,6 +8,12 @@ class Aluno {
 
   Aluno(this._nome);
 
+  factory Aluno.fromMap(Map<String, dynamic> map) {
+    Aluno novo = Aluno(map['nome']);
+    for (var nota in map['notas'].toList()) novo._lancarNota(nota);
+    return novo;
+  }
+
   String getNome() {
     return _nome;
   }
@@ -23,6 +29,10 @@ class Aluno {
     }
 
     return somaNotas / somaPesos;
+  }
+
+  void _lancarNota(Nota nota) {
+    _notas.add(nota);
   }
 
   void lancarNotaProva(double valor, String descricao) {
@@ -67,7 +77,10 @@ class Aluno {
     print('Média: ${media()}\n');
   }
 
-  Map<String, dynamic> toMap () {
-    return {'nome': _nome, 'notas': _notas.map((nota) => nota.toMap()).toList()};
+  Map<String, dynamic> toMap() {
+    return {
+      'nome': _nome,
+      'notas': _notas.map((nota) => nota.toMap()).toList(),
+    };
   }
 }
