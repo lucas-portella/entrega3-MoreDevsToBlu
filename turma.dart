@@ -4,8 +4,21 @@ import 'dart:io';
 class Turma {
   List<Aluno> _alunos = [];
 
+  Turma();
+
   void cadastrarAluno() {
     _alunos.add(Aluno(_lerNomeAluno()));
+  }
+
+  void _cadastrarAluno(Aluno aluno) {
+    _alunos.add(aluno);
+  }
+
+  factory Turma.fromMap(Map<String, dynamic> map) {
+    Turma turma = new Turma();
+    for (var aluno in map['alunos'].toList())
+      turma._cadastrarAluno(Aluno.fromMap(aluno));
+    return turma;
   }
 
   bool indiceValido(int i) {
